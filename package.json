@@ -5,19 +5,23 @@
    "license": "MIT",
    "scripts": {
       "dev": "nodemon",
-      "build": "rimraf .renzi-app && tsc && cp .env ./.renzi-app/.env",
-      "start": "node .renzi-app/app.js",
+      "build": "rimraf .renzi-app && tsc && cp .env ./.renzi-app/.env && cp -r views ./.renzi-app/views && cp -r uploads ./.renzi-app/uploads ",
+      "start": "node -r module-alias/register .renzi-app/app.js",
       "format": "prettier --write ."
    },
    "dependencies": {
       "cloudinary": "^1.21.0",
       "cors": "^2.8.5",
       "express": "^5.1.0",
+      "module-alias": "^2.2.3",
       "multer": "1.4.5-lts.2",
       "multer-storage-cloudinary": "^4.0.0",
       "pug": "^3.0.3",
       "rimraf": "^6.0.1",
       "sharp": "^0.34.1"
+   },
+   "_moduleAliases": {
+      "@": ".renzi-app"
    },
    "packageManager": "pnpm@9.14.2+sha512.6e2baf77d06b9362294152c851c4f278ede37ab1eba3a55fda317a4a17b209f4dbb973fb250a77abc463a341fcb1f17f17cfa24091c4eb319cda0d9b84278387",
    "devDependencies": {
