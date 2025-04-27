@@ -7,7 +7,9 @@ echo '🔧💣 Lagi ngerakit, ngetes, sama ngebuild project sebelum commit...'
 pnpm check-format ||
 (
   echo '💩🚽 Formatting lo jorok kayak wc umum. 💩🚽
-      Prettier Check GAGAL. Jalanin "pnpm format", benerin dulu, baru commit sono.'
+      Prettier Check GAGAL. Auto-format jalan...'
+  pnpm format
+  echo '✨ Formatting udah diperbaiki. Silakan cek lagi dan commit ulang.'
   false;
 )
 
