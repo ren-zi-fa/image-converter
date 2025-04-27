@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "builds": [
+       {
+          "src": ".renzi-app/app.js",
+          "use": "@vercel/node"
+       }
+    ],
+    "routes": [
+       {
+          "src": "/(.*)",
+          "dest": ".renzi-app/app.js"
+       }
+    ]
+ }

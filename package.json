@@ -5,7 +5,6 @@
    "license": "MIT",
    "scripts": {
       "dev": "nodemon",
-      "prepare": "husky",
       "build": "rimraf .renzi-app && tsc && cp .env ./.renzi-app/.env",
       "start": "node .renzi-app/app.js",
       "format": "prettier --write ."
