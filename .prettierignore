@@ -1,0 +1,9 @@
+.prettierrc
+pnpm-lock.yaml
+tsconfig.json
+readme.md
+nodemon.json
+.myapp
+node_modules
+vercel.json
+.vercel
