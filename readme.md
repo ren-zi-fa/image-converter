@@ -26,4 +26,5 @@ npm run dev
 
 ## screenshot
 
-https://github.com/ren-zi-fa/image-converter/blob/main/screenshot.png
+![Screenshot](https://github.com/ren-zi-fa/image-converter/raw/main/screenshot.png)
+
