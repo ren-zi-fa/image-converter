@@ -1,0 +1,115 @@
+doctype html
+html(lang="en")
+  head
+    title Upload Gambar
+    style.
+      /* Resetting margin and padding for consistent layout */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f7fc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background-color: #ffffff;
+        border-radius: 8px;
+        padding: 2rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 1.5rem;
+      }
+
+      form {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.2rem;
+      }
+
+      label {
+        display: block;
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 0.5rem;
+      }
+
+      input[type="file"] {
+        width: 100%;
+        padding: 0.8rem;
+        border-radius: 5px;
+        border: 2px solid #ddd;
+        background-color: #fafafa;
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 1rem;
+      }
+
+      button[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+
+      .go-back {
+        margin-top: 1.5rem;
+      }
+
+      .go-back a {
+        font-size: 1rem;
+        color: #007bff;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .go-back a:hover {
+        color: #0056b3;
+      }
+
+      footer {
+        text-align: center;
+        font-size: 0.9rem;
+        margin-top: 2rem;
+      }
+
+      footer p {
+        color: #888;
+      }
+  body
+    .container
+      h1 Upload Gambar Kamu
+      form(action="/api/upload", method="POST", enctype="multipart/form-data")
+        .form-group
+          label(for="image") Pilih Gambar (PNG, JPG, WebP)
+          input(type="file", name="image", id="image", accept="image/png, image/jpeg, image/webp", required)
+        .form-group
+          button(type="submit") Upload Gambar
+      .go-back
+        a(href="/") Kembali

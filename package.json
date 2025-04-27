@@ -4,14 +4,14 @@
       "prepare": "husky",
       "build": "rimraf .renzi-app && tsc && cp .env ./.renzi-app/.env",
       "start": "node .renzi-app/app.js",
-      "format": "prettier --write .",
-      "format:check": "prettier --check .",
-      "check-types": "tsc --noEmit --pretty",
-      "check-format": "pnpm format:check"
+      "format": "prettier --write ."
    },
    "dependencies": {
+      "cloudinary": "^1.21.0",
       "express": "^5.1.0",
       "multer": "1.4.5-lts.2",
+      "multer-storage-cloudinary": "^4.0.0",
+      "pug": "^3.0.3",
       "rimraf": "^6.0.1",
       "sharp": "^0.34.1"
    },
@@ -21,7 +21,6 @@
       "@types/multer": "^1.4.12",
       "@types/node": "^22.15.2",
       "dotenv": "^16.5.0",
-      "husky": "^9.1.7",
       "nodemon": "^3.1.10",
       "prettier": "^3.5.3",
       "tsx": "^4.19.3",

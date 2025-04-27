@@ -1,21 +1,29 @@
-import express from 'express';
-import { upload } from '@/middleware/parse.middleware';
+import { uploadToCloudinary } from '@/middleware/cloudinary.middleware'
+import upload from '@/middleware/multer.middleware'
+import { Router } from 'express'
 
-const router = express.Router();
+const router = Router()
+router.post(
+   '/upload',
+   upload.single('image'),
+   uploadToCloudinary,
+   async (req: any, res: any) => {
+      if (!req.body.imageUrl) {
+         return res.status(400).json({
+            success: false,
+            message: 'Tidak ada file yang diupload',
+         })
+      }
 
-router.post('/create-person', upload.single('photo'), (req, res) => {
-   const { nama, umur, alamat } = req.body;
-   const fotoPath = req.file ? `/images/${req.file.filename}` : null;
+      return res.status(200).json({
+         success: true,
+         message: 'Gambar berhasil dikonversi ke WebP dan diupload',
+         data: {
+            imageUrl: req.body.imageUrl,
+            cloudinaryId: req.body.cloudinaryId,
+         },
+      })
+   },
+)
 
-   res.send({
-      message: 'Data received',
-      data: { nama, umur, alamat, foto: fotoPath },
-   });
-});
-
-router.get('/hello/:nama', (req, res) => {
-   const nama = req.params.nama;
-   res.send({ message: `hallo ${nama}` });
-});
-
-export { router };
+export { router }
